@@ -28,6 +28,7 @@ services:
       DATABASE_PASSWORD: mypassword
       DATABASE_NAME: mydatabase
       REDIS_HOST: redis
+      REDIS_PORT: 6379
     depends_on:
       - postgres
       - redis
@@ -40,6 +41,7 @@ services:
       dockerfile: Dockerfile
     environment:
       REDIS_HOST: redis
+      REDIS_PORT: 6379
     depends_on:
       - redis
     ports:

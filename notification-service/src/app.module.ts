@@ -7,7 +7,7 @@ import { NotificationsService } from './notifications/notifications.service';
     BullModule.forRoot({
       redis: {
         host: process.env.REDIS_HOST,
-        port: 6379,
+        port: +process.env.REDIS_PORT,
       },
     }),
     BullModule.registerQueue({

@@ -50,7 +50,7 @@ export class UsersService {
       await this.notificationQueue.add(
         'sendNotification',
         { userId: user.id },
-        { delay: DELAY_TEST },
+        { delay: DELAY_REGULAR },
       );
       this.logger.log(`Notification queued for user ${user.username}.`);
 
@@ -69,9 +69,5 @@ export class UsersService {
         'User creation failed due to an unexpected error.',
       );
     }
-  }
-
-  async getAll(): Promise<User[]> {
-    return await this.userRepository.find();
   }
 }
